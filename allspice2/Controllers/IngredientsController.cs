@@ -22,7 +22,6 @@ namespace allspice2.Controllers
         }
 
         [HttpPost]
-        [Authorize]
         public  ActionResult<Ingredient> Create([FromBody]Ingredient ingredientData)
         {
             try
@@ -36,7 +35,6 @@ namespace allspice2.Controllers
 
         }
         [HttpDelete("{id}")]
-        [Authorize]
         public ActionResult<Ingredient> Delete(int id)
         {
             try

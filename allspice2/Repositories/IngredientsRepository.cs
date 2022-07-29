@@ -19,9 +19,9 @@ namespace allspice2.Repositories
         public Ingredient Create(Ingredient ingredientData)
         {
             string sql = @"INSERT INTO ingredients
-            (name)
+            (name, recipeId)
             VALUES
-            (@Name);
+            (@Name, @RecipeId);
             SELECT LAST_INSERT_ID();";
             int id = _db.ExecuteScalar<int>(sql, ingredientData);
             ingredientData.Id = id;
@@ -36,8 +36,10 @@ namespace allspice2.Repositories
 
         public List<Ingredient> GetByRecipe(int recipeId)
         {
-            string sql = "SELECT * FROM ingredients WHERE recipe_id = @recipeId";
+            string sql = "SELECT * FROM ingredients WHERE recipeId = @recipeId";
             return _db.Query<Ingredient>(sql, new { recipeId }).ToList();
+
+         
         }
    
         

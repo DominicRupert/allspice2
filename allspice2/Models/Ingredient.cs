@@ -11,6 +11,10 @@ namespace allspice2.Models
         public string Name { get; set; }
         public int RecipeId { get; set; }
 
+
+
         
     }
+
+    
 }

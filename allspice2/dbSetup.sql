@@ -15,13 +15,13 @@ name VARCHAR(255) NOT NULL COMMENT 'Recipe Name',
 description VARCHAR(255),
 category VARCHAR(255) 
 
-);
+)default charset utf8 COMMENT '';
 
 CREATE TABLE IF NOT EXISTS ingredients(
   id INT NOT NULL AUTO_INCREMENT primary key COMMENT 'primary key',
-  name VARCHAR(255) NOT NULL COMMENT 'Ingredient Name',
-  recipeId INT NOT NULL COMMENT 'Recipe Id',
+  name VARCHAR(255) NOT NULL,
+  recipeId INT NOT NULL,
   FOREIGN KEY (recipeId) REFERENCES recipes(id)
  
 
-);
+)default charset utf8 COMMENT '';

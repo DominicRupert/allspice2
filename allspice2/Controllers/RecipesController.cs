@@ -16,12 +16,15 @@ namespace allspice2.Controllers
     public class RecipesController : ControllerBase
     {
         private readonly RecipesService _rs;
+        private readonly IngredientsService _iserv;
 
 
-        public RecipesController(RecipesService rs)
+        public RecipesController(RecipesService rs, IngredientsService iserv)
         {
             _rs = rs;
+            _iserv = iserv;
         }
+     
 
         [HttpGet]
         public ActionResult<List<Recipe>> Get()
@@ -35,6 +38,12 @@ namespace allspice2.Controllers
         public ActionResult<Recipe> Get(int id)
         {
             return _rs.Get(id);
+        }
+
+        [HttpGet("{id}/ingredients")]
+        public ActionResult<List<Ingredient>> GetIngredients(int id)
+        {
+            return _iserv.GetByRecipe(id);
         }
 
         [HttpPost]
