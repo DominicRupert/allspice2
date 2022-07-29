@@ -46,6 +46,8 @@ namespace allspice2.Controllers
             return _iserv.GetByRecipe(id);
         }
 
+        // [HttpGet("{id}/favorites")]
+
         [HttpPost]
         public ActionResult<Recipe> Create(Recipe recipeData)
         {
