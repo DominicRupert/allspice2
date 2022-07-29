@@ -45,7 +45,7 @@ namespace allspice2.Services
         }
         internal void Delete(int id)
         {
-             _rr.Delete(id);
+            _rr.Delete(id);
         }
-    }
-}
+     
+}}

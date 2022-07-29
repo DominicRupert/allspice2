@@ -6,13 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using allspice2.Models;
 using allspice2.Services;
 using Microsoft.AspNetCore.Authorization;
+using CodeWorks.Auth0Provider;
 
 namespace allspice2.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
 
-    public class RecipesController
+    public class RecipesController : ControllerBase
     {
         private readonly RecipesService _rs;
 
