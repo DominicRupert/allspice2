@@ -13,8 +13,21 @@ namespace allspice2.Models
 
         public string Category { get; set; }
 
+        public string Image { get; set; }
+
+        public Profile Creator { get; set; }
+
+        public string CreatorId { get; set; }
+
+
+
 
 
         
+    }
+
+    public class RecipeFavorite
+    {
+     public int FavId { get; set; }
     }
 }
